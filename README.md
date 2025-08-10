@@ -12,6 +12,7 @@ npm install paralax-image
 
 ```tsx
 import ParalaxImage from 'paralax-image';
+import "paralax-image/dist/index.css"; // Ensure to import the CSS for ParalaxImage
 
 const App = () => {
   const imageSources = {
