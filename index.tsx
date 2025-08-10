@@ -3,6 +3,8 @@
 
 import { useCallback, useState } from 'react';
 
+import './index.css';
+
 // Export types for consumers of the package
 export type Axis = {
     x: number;
