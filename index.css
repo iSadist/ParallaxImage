@@ -1,0 +1,40 @@
+.paralax-image__wrapper {
+    position: relative;
+    width: 700px;
+    height: 400px;
+}
+
+.paralax-image__image1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    scale: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.paralax-image__image2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    scale: 0.95;
+    object-fit: cover;
+}
+
+.paralax-image__image3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    scale: 0.9;
+    object-fit: cover;
+}

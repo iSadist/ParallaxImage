@@ -1,0 +1,41 @@
+{
+  "name": "paralax-image",
+  "version": "0.0.1",
+  "description": "A simple React component to display a parallax image.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "index.css",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && cp index.css dist/",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jansvensson/paralax-image.git"
+  },
+  "keywords": [
+    "react",
+    "parallax",
+    "appletv",
+    "image",
+    "component"
+  ],
+  "author": "Jan Svensson",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@types/react": "^19.1.9"
+  }
+}
