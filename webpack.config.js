@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 
 export default {
   entry: './src/index.ts',
@@ -32,4 +33,9 @@ export default {
     port: 3000,
   },
   mode: 'production',
+  plugins: [
+    new webpack.DefinePlugin({
+      self: 'globalThis', // Define `self` as `globalThis` for compatibility
+    }),
+  ],
 };
