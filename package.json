@@ -1,6 +1,6 @@
 {
   "name": "paralax-image",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A simple React component to display a parallax image.",
   "author": "Jan Svensson",
   "license": "ISC",

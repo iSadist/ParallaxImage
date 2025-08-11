@@ -11,6 +11,7 @@ export default {
       type: 'umd',
     },
     clean: true,
+    globalObject: 'this', // Ensure compatibility for UMD builds
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
