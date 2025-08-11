@@ -6,12 +6,10 @@ export default {
   output: {
     path: path.resolve('dist'),
     filename: 'bundle.js',
-    library: {
-      name: 'ParallaxImage',
-      type: 'umd',
-    },
-    clean: true,
+    library: 'ParallaxImage', // Ensure the library name is correctly set
+    libraryTarget: 'umd', // Explicitly set the library target to UMD
     globalObject: 'this', // Ensure compatibility for UMD builds
+    clean: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
