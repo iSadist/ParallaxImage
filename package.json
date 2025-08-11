@@ -2,23 +2,32 @@
   "name": "paralax-image",
   "version": "0.0.4",
   "description": "A simple React component to display a parallax image.",
+  "author": "Jan Svensson",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iSadist/ParallaxImage.git"
+  },
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "index.css",
     "README.md"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "tsc && cp index.css dist/",
+    "build": "tsc",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/iSadist/ParallaxImage.git"
   },
   "keywords": [
     "react",
@@ -27,8 +36,6 @@
     "image",
     "component"
   ],
-  "author": "Jan Svensson",
-  "license": "ISC",
   "peerDependencies": {
     "react": ">=16.8.0"
   },

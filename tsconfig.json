@@ -22,8 +22,7 @@
     "noEmitOnError": true
   },
   "include": [
-    "index.tsx",
-    "types.d.ts"
+    "src",
   ],
   "exclude": [
     "node_modules",

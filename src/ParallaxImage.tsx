@@ -3,25 +3,7 @@
 
 import { useCallback, useState } from 'react';
 
-// Export types for consumers of the package
-export type Axis = {
-    x: number;
-    y: number;
-    z: number;
-    rotation: number;
-}
-
-export type ImageSources = {
-    background: string;
-    middle: string;
-    front: string;
-}
-
-export type ParallaxImageProps = {
-    imageSrc: ImageSources;
-    alt: string;
-    className?: string;
-};
+// TODO: Break out some functionality into separate files and add tests
 
 function ParalaxImage({ imageSrc, alt }: ParallaxImageProps) {
     const [axis, setAxis] = useState<Axis>({ x: 0, y: 0, z: 0, rotation: 0 });
