@@ -1,2 +1,2 @@
-import ParalaxImage from "./ParallaxImage";
-export default ParalaxImage;
+import Component from './ParalaxImage';
+export default Component;

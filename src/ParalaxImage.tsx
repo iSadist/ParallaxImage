@@ -3,33 +3,70 @@
 
 import { useCallback, useState } from 'react';
 
-import "./index.css";
+type ImageSources = {
+    background: string;
+    middle: string;
+    front: string;
+}
 
-// TODO: Break out some functionality into separate files and add tests
+type ParallaxImageProps = {
+    imageSrc: ImageSources;
+    alt: string;
+    className?: string;
+};
+
+type Axis = {
+    x: number;
+    y: number;
+    z: number;
+    rotation: number;
+}
+
+const commonImageStyles: React.CSSProperties = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    transform: 'translate(-50%, -50%)',
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+}
 
 function ParalaxImage({ imageSrc, alt }: ParallaxImageProps) {
     const [axis, setAxis] = useState<Axis>({ x: 0, y: 0, z: 0, rotation: 0 });
 
     // Increase the rotation effect
     const style1 = {
+        ...commonImageStyles,
+        scale: 1,
+        borderRadius: '10px',
+        overflow: 'hidden',
         transform: `
             rotate3D(${axis.x}, ${axis.y}, ${axis.z}, ${axis.rotation / 2}deg)
             translate3D(${axis.y * 5}px, ${-axis.x * 5}px, 0)
-        `
+        `,
     }
-
     const style2 = {
+        ...commonImageStyles,
+        scale: 0.95,
         transform: `
             rotate3D(${axis.x}, ${axis.y}, ${axis.z}, ${axis.rotation / 1.5}deg)
             translate3D(${axis.y * 10}px, ${-axis.x * 10}px, 0)
         `
     }
-
     const style3 = {
+        ...commonImageStyles,
+        scale: 0.9,
         transform: `
             rotate3D(${axis.x}, ${axis.y}, ${axis.z}, ${axis.rotation}deg)
             translate3D(${axis.y * 20}px, ${-axis.x * 20}px, 0)
         `
+    }
+
+    const wrapperStyle: React.CSSProperties = {
+        position: 'relative',
+        width: '700px',
+        height: '400px',
     }
 
     const getRelativeMousePosition = (event: React.MouseEvent<HTMLElement>) => {
@@ -98,13 +135,13 @@ function ParalaxImage({ imageSrc, alt }: ParallaxImageProps) {
 
     return (
         <div
-            className={"paralax-image__wrapper"}
+            style={wrapperStyle}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
-            <img className={"paralax-image__image1"} style={style1} src={imageSrc.background} alt={alt} />
-            <img className={"paralax-image__image2"} style={style2} src={imageSrc.middle} alt={alt} />
-            <img className={"paralax-image__image3"} style={style3} src={imageSrc.front} alt={alt} />
+            <img style={style1} src={imageSrc.background} alt={alt} />
+            <img style={style2} src={imageSrc.middle} alt={alt} />
+            <img style={style3} src={imageSrc.front} alt={alt} />
 
             {/* Shadow is needed to make the effect more realistic */}
         </div>
