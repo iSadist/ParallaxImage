@@ -11,6 +11,8 @@ type ImageSources = {
 
 type ParallaxImageProps = {
     imageSrc: ImageSources;
+    width: string;
+    height: string;
     alt: string;
     className?: string;
 };
@@ -32,7 +34,7 @@ const commonImageStyles: React.CSSProperties = {
     objectFit: 'cover',
 }
 
-function ParalaxImage({ imageSrc, alt }: ParallaxImageProps) {
+function ParalaxImage({ imageSrc, alt, width, height }: ParallaxImageProps) {
     const [axis, setAxis] = useState<Axis>({ x: 0, y: 0, z: 0, rotation: 0 });
 
     // Increase the rotation effect
@@ -65,8 +67,8 @@ function ParalaxImage({ imageSrc, alt }: ParallaxImageProps) {
 
     const wrapperStyle: React.CSSProperties = {
         position: 'relative',
-        width: '700px',
-        height: '400px',
+        width: width,
+        height: height,
     }
 
     const getRelativeMousePosition = (event: React.MouseEvent<HTMLElement>) => {
