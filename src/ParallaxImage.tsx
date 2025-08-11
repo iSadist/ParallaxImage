@@ -3,6 +3,8 @@
 
 import { useCallback, useState } from 'react';
 
+import "./index.css";
+
 // TODO: Break out some functionality into separate files and add tests
 
 function ParalaxImage({ imageSrc, alt }: ParallaxImageProps) {
